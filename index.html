@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História de Amor ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas para efeitos de partículas -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">Nossa História</h1>
+                <p class="subtitle">Um amor para celebrar cada segundo</p>
+                <!-- Adicionado indicador de modo admin/visitante -->
+                <p id="adminIndicator" class="admin-indicator" style="display:none; font-size: 0.8rem; margin-top: 10px; color: var(--text-light);">✏️ Modo Edição Ativado</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Photo Section -->
+            <section class="photo-section">
+                <div class="photo-container">
+                    <div id="photoDisplay" class="photo-display">
+                        <svg class="photo-placeholder" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="200" height="200" fill="#f5e6ed"/>
+                            <circle cx="100" cy="70" r="30" fill="#d946a6"/>
+                            <path d="M40 200 Q40 130 100 130 Q160 130 160 200" fill="#d946a6"/>
+                        </svg>
+                        <p class="photo-text">Toque para adicionar foto</p>
+                    </div>
+                    <input 
+                        type="file" 
+                        id="photoInput" 
+                        accept="image/*" 
+                        class="photo-input"
+                        aria-label="Upload de foto do casal"
+                    >
+                </div>
+            </section>
+
+            <!-- Date Setup Section -->
+            <section class="setup-section">
+                <h2 class="section-title">Quando começamos?</h2>
+                <div class="date-inputs">
+                    <div class="input-group">
+                        <label for="dateInput">Data e Hora</label>
+                        <input 
+                            type="datetime-local" 
+                            id="dateInput"
+                            aria-label="Data e hora do início do relacionamento"
+                        >
+                    </div>
+                </div>
+                <button id="saveBtn" class="btn btn-primary">💾 Salvar Data</button>
+            </section>
+
+            <!-- Counter Section -->
+            <section class="counter-section">
+                <h2 class="section-title">Tempo Juntos</h2>
+                <div class="counter-grid">
+                    <div class="counter-card">
+                        <div class="counter-value" id="days">0</div>
+                        <div class="counter-label">Dias</div>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-value" id="hours">0</div>
+                        <div class="counter-label">Horas</div>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-value" id="minutes">0</div>
+                        <div class="counter-label">Minutos</div>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-value" id="seconds">0</div>
+                        <div class="counter-label">Segundos</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Message Section -->
+            <section class="message-section">
+                <h2 class="section-title">Mensagem Especial</h2>
+                <textarea 
+                    id="messageInput" 
+                    class="message-input" 
+                    placeholder="Escreva uma mensagem de amor..."
+                    aria-label="Mensagem especial para seu amor"
+                ></textarea>
+                <button id="saveMessageBtn" class="btn btn-secondary">💌 Guardar Mensagem</button>
+                <div id="messageDisplay" class="message-display"></div>
+            </section>
+
+            <!-- Music Section -->
+            <section class="music-section">
+                <h2 class="section-title">Música da Gente</h2>
+                <div class="music-controls">
+                    <label for="musicInput" class="music-label">
+                        🎵 Adicionar Música
+                        <input 
+                            type="file" 
+                            id="musicInput" 
+                            accept="audio/*" 
+                            aria-label="Upload de música"
+                        >
+                    </label>
+                    <div id="musicPlayer" class="music-player"></div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+        </main>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
